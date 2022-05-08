@@ -1,0 +1,139 @@
+@charset 'utf-8';
+// ============================================================
+//  _mixin.scss
+// ============================================================
+
+// Breakpoint
+// ============================================================
+
+// min-width
+$breakpoint-up: ('sm': 'screen and (min-width: 450px)',
+  'md': 'screen and (min-width: 769px)',
+  'lg': 'screen and (min-width: 1040px)',
+  'xl': 'screen and (min-width: 1366px)',
+) !default;
+
+// max-width
+$breakpoint-down: ('ssm': 'screen and (max-width: 320px)',
+  'sm': 'screen and (max-width: 450px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 1279px)',
+  'xl': 'screen and (max-width: 1439px)',
+) !default;
+
+// @mixinの定義
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: lg) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+
+// Aspect Ratio
+// ============================================================
+@mixin aspect-ratio($width, $height) {
+  padding-top: ($height / $width) * 100%;
+}
+
+
+// Smoothing
+// フォントのレンダリングを調整（アンチエイリアスの効果を変更する）
+// @param {string} $value（falseにすると通常の状態に戻せる）
+// ============================================================
+@mixin smoothing($status: '') {
+  @if $status=='false' {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  @else {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+// Text Ellipsis
+// 1行の要素の末尾に三点リーダ（…）で省略
+// ============================================================
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Text Line Clamp
+// 複数行の要素の末尾に三点リーダ（…）で省略
+// ============================================================
+@mixin line-clamp($count: 3) {
+  // 引数が数値以外だったらエラーを返す
+  @if type-of($count) != 'number' {
+    @error 'line-clampの引数は必ず数値で指定してください';
+  }
+
+  @if $count == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Text Hide
+// タグ内にあるテキストを非表示にする（枠外に移動させる）
+// ============================================================
+@mixin text-hide {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Text vw
+// pxをvwに変換する
+// ============================================================
+@function vw($px, $base: 375px) {
+  $value: $px;
+
+  // 単位がpx以外の場合は警告を出してそのまま返す
+  @if (unit($px) != 'px') {
+    @warn 'vw()の引数にpx以外の値を指定しても計算できません';
+    @return $value;
+  }
+
+  $value: (strip-unit($px) / strip-unit($base)) * 100vw;
+
+  @return $value;
+}
+
+// Text rem
+// pxをremに変換する
+// ============================================================
+@function rem($px, $base: 16px) {
+  $value: $px;
+
+  // 単位がpx以外の場合は警告を出してそのまま返す
+  @if (unit($px) != 'px') {
+    @warn 'rem()の引数にpx以外の値を指定しても計算できません';
+    @return $value;
+  }
+
+  $value: (strip-unit($px) / strip-unit($base)) * 1rem;
+
+  @return $value;
+}
+
+@mixin pesudo {
+  content: "";
+  display: block;
+  position: absolute;
+}

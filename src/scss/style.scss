@@ -1,0 +1,189 @@
+@charset 'utf-8';
+
+@import '_common';
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;700&display=swap');
+
+body {
+  padding: 50px;
+}
+
+.controller {
+  background: colors(red);
+  border-radius: 20px;
+  padding: 16px;
+  position: relative;
+  width: 596px;
+}
+
+.controller__inner {
+  border-radius: 10px;
+  padding: 12px 12px 14px;
+  position: relative;
+  width: 100%;
+  &:before, &:after {
+    @include pesudo;
+    background: colors(beige);
+    left: 0;
+    z-index: 0;
+  }
+  &:after {
+    border-radius: 10px 10px 0 0;
+    height: 150px;
+    width: 188px;
+    top: 0;
+  }
+  &:before {
+    border-radius: 0 10px 10px 10px;
+    height: 110px;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.controller__symbol {
+  align-items: center;
+  background: colors(black);
+  color: colors(beige);
+  display: flex;
+  font-family: 'Libre Bodoni', serif;
+  height: 54px;
+  justify-content: center;
+  line-height: 0;
+  width: 54px;
+  position: relative;
+  z-index: 2;
+}
+
+.controller__symbolInner {
+  font-size:  34px;
+  margin-top: 6px;
+}
+
+.controller__body {
+  align-items: flex-end;
+  position: relative;
+  display: flex;
+  z-index: 2;
+}
+
+.contoroller__arrowButtonWrap {
+  height: 106px;
+  margin: 38px 0 0 24px;
+  position: relative;
+  z-index: 1;
+  width: 106px;
+  &:before, &:after {
+    @include pesudo;
+    background: colors(red);
+    border-radius: 4px;
+    z-index: 0;
+  }
+  &:before {
+    height: 40px;
+    width: 106px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:after {
+    left: 50%;
+    height: 106px;
+    transform: translateX(-50%);
+    width: 40px;
+  }
+}
+
+.contoroller__arrowButton {
+  background: colors(black);
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  &.-leftRight {
+    height: 32px;
+    margin-left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 98px;
+  }
+  &.-upDown {
+    height: 98px;
+    left: 50%;
+    margin-top: 4px;
+    transform: translateX(-50%);
+    width: 32px;
+  }
+}
+
+.contoroller__commonButtonWrap {
+  background: colors(red);
+  border-radius: 26px;
+  display: flex;
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  justify-content: center;
+  height: 52px;
+  margin-left: 44px;
+  position: relative;
+  width: 154px;
+}
+
+.contoroller__commonButton {
+  margin-top: -20px;
+  &:after {
+    @include pesudo;
+    background: colors(black);
+    border-radius: 10px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+  }
+  &.-start {
+    margin-left: 30px;
+    &:after {
+      margin-left: -5px;
+    }
+  }
+}
+
+.controller__border {
+  border-top: 2px solid colors(black);
+  border-bottom: 2px solid colors(black);
+  height: 11px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  z-index: 1;
+}
+
+.contoroller__actionButtonWrap {
+  display: flex;
+}
+
+.contoroller__actionButton {
+  background: colors(black);
+  border: 4px solid colors(red);
+  border-radius: 50%;
+  height: 56px;
+  margin-left: 46px;
+  width: 56px;
+  position: relative;
+  &.-sub {
+    margin-left: 16px;
+  }
+}
+
+.controller__curve {
+  background: colors(beige);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  top: 64px;
+  left: 188px;
+}
+.controller__curveInner {
+  border-radius: 0 0 0 50%;
+  background: colors(red);
+  height: 100%;
+}

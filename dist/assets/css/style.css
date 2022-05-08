@@ -1,0 +1,415 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;700&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  line-height: 1.6;
+  color: colors(black); }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    opacity: .7; }
+
+img {
+  vertical-align: middle;
+  max-width: 100%; }
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 100; }
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 200; }
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 300; }
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Bold");
+  font-weight: bold; }
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 100; }
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 200; }
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif; }
+
+@media all and (-ms-high-contrast: none) {
+  html {
+    font-family: Verdana, Meiryo, sans-serif; } }
+
+@media all and (-ms-high-contrast: active) {
+  html {
+    font-family: Verdana, Meiryo, sans-serif; } }
+
+* {
+  box-sizing: border-box; }
+  *:before, *:after {
+    box-sizing: border-box; }
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+
+input,
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer; }
+
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none; }
+
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px; }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent; }
+
+button,
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent; }
+
+input[type="radio"] {
+  display: none; }
+
+@media screen and (min-width: 769px) {
+  .br-sp {
+    display: none; } }
+
+.br-pc {
+  display: none; }
+  @media screen and (min-width: 769px) {
+    .br-pc {
+      display: inline; } }
+
+body {
+  padding: 50px; }
+
+.controller {
+  background: #8F1429;
+  border-radius: 20px;
+  padding: 16px;
+  position: relative;
+  width: 596px; }
+
+.controller__inner {
+  border-radius: 10px;
+  padding: 12px 12px 14px;
+  position: relative;
+  width: 100%; }
+  .controller__inner:before, .controller__inner:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #EBD4B4;
+    left: 0;
+    z-index: 0; }
+  .controller__inner:after {
+    border-radius: 10px 10px 0 0;
+    height: 150px;
+    width: 188px;
+    top: 0; }
+  .controller__inner:before {
+    border-radius: 0 10px 10px 10px;
+    height: 110px;
+    bottom: 0;
+    width: 100%; }
+
+.controller__symbol {
+  align-items: center;
+  background: #2E3935;
+  color: #EBD4B4;
+  display: flex;
+  font-family: 'Libre Bodoni', serif;
+  height: 54px;
+  justify-content: center;
+  line-height: 0;
+  width: 54px;
+  position: relative;
+  z-index: 2; }
+
+.controller__symbolInner {
+  font-size: 34px;
+  margin-top: 6px; }
+
+.controller__body {
+  align-items: flex-end;
+  position: relative;
+  display: flex;
+  z-index: 2; }
+
+.contoroller__arrowButtonWrap {
+  height: 106px;
+  margin: 38px 0 0 24px;
+  position: relative;
+  z-index: 1;
+  width: 106px; }
+  .contoroller__arrowButtonWrap:before, .contoroller__arrowButtonWrap:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #8F1429;
+    border-radius: 4px;
+    z-index: 0; }
+  .contoroller__arrowButtonWrap:before {
+    height: 40px;
+    width: 106px;
+    top: 50%;
+    transform: translateY(-50%); }
+  .contoroller__arrowButtonWrap:after {
+    left: 50%;
+    height: 106px;
+    transform: translateX(-50%);
+    width: 40px; }
+
+.contoroller__arrowButton {
+  background: #2E3935;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1; }
+  .contoroller__arrowButton.-leftRight {
+    height: 32px;
+    margin-left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 98px; }
+  .contoroller__arrowButton.-upDown {
+    height: 98px;
+    left: 50%;
+    margin-top: 4px;
+    transform: translateX(-50%);
+    width: 32px; }
+
+.contoroller__commonButtonWrap {
+  background: #8F1429;
+  border-radius: 26px;
+  display: flex;
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  justify-content: center;
+  height: 52px;
+  margin-left: 44px;
+  position: relative;
+  width: 154px; }
+
+.contoroller__commonButton {
+  margin-top: -20px; }
+  .contoroller__commonButton:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #2E3935;
+    border-radius: 10px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px; }
+  .contoroller__commonButton.-start {
+    margin-left: 30px; }
+    .contoroller__commonButton.-start:after {
+      margin-left: -5px; }
+
+.controller__border {
+  border-top: 2px solid #2E3935;
+  border-bottom: 2px solid #2E3935;
+  height: 11px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  z-index: 1; }
+
+.contoroller__actionButtonWrap {
+  display: flex; }
+
+.contoroller__actionButton {
+  background: #2E3935;
+  border: 4px solid #8F1429;
+  border-radius: 50%;
+  height: 56px;
+  margin-left: 46px;
+  width: 56px;
+  position: relative; }
+  .contoroller__actionButton.-sub {
+    margin-left: 16px; }
+
+.controller__curve {
+  background: #EBD4B4;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  top: 64px;
+  left: 188px; }
+
+.controller__curveInner {
+  border-radius: 0 0 0 50%;
+  background: #8F1429;
+  height: 100%; }

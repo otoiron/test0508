@@ -1,0 +1,29 @@
+@charset 'utf-8';
+// ============================================================
+//  _common.scss
+//    - Setting
+//    - Mixin
+//    - Function
+//    - Base
+// ============================================================
+
+@import 'base/reset';
+@import 'base/color';
+
+// Mixin
+// ============================================================
+@import 'base/mixin';
+
+.br {
+  &-sp {
+    @include mq-up(){
+      display: none;
+    }
+  }
+  &-pc {
+    display:  none;
+    @include mq-up(){
+      display: inline;
+    }
+  }
+}
