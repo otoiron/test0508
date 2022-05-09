@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+$colors: (
+  red: #8F1429,
+  beige: #EBD4B4,
+  black: #2E3935
+);
+
+@function colors($key) {
+    @return map-get($colors, $key);
+}
